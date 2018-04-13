@@ -1,18 +1,19 @@
 $(document).ready(function() {
 
-	// 1. Initialize Firebase
-    var config = {
-      apiKey: "AIzaSyBYI-IY3X37-f6E97aCDSCg5CXM0kzCjbo",
-      authDomain: "fir-trainscheduler-cf14c.firebaseapp.com",
-      databaseURL: "https://fir-trainscheduler-cf14c.firebaseio.com",
-      projectId: "fir-trainscheduler-cf14c",
-      storageBucket: "fir-trainscheduler-cf14c.appspot.com",
-      messagingSenderId: "921347413833"
-    };
-    firebase.initializeApp(config);
 
+			
+			// Initialize Firebase
+			var config = {
+				apiKey: "AIzaSyCz5qSH258b3xvPTINCdXCEcg1bXthB9xk",
+				authDomain: "trainstationhw.firebaseapp.com",
+				databaseURL: "https://trainstationhw.firebaseio.com",
+				projectId: "trainstationhw",
+				storageBucket: "trainstationhw.appspot.com",
+				messagingSenderId: "286475536811"
+			};
+			firebase.initializeApp(config);
+		
 
-      var database = firebase.database();
 
 // start here //
 
@@ -21,7 +22,9 @@ var database = firebase.database();
   // First Time (pushed back 1 year to make sure it comes before current time)
 
   // 2. Button for adding Trains
+		console.log('zttaching ecvdent')
   $("#add-train-btn").on("click", function(event) {
+		console.log('gettin clicked')
   		event.preventDefault();
       //why is the above here?//
 
@@ -51,7 +54,7 @@ var database = firebase.database();
 	  $("#dest-input").val("");
 	  $("#firstTrain-input").val("");
 	  $("#freq-input").val("");
-  	});
+	});
 
   	// 3. Create Firebase event for adding train to the database and a row in the html when a user adds an entry
 	database.ref().on("child_added", function(childSnapshot, prevChildKey) {
