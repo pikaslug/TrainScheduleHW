@@ -1,24 +1,29 @@
-$(document).ready(function();
+$(document).ready(function() {
 
-<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDB1oQhlrqtpBa5bLsHj6hxpdtrzhZybUw",
-    authDomain: "trainhw-85ef6.firebaseapp.com",
-    databaseURL: "https://trainhw-85ef6.firebaseio.com",
-    projectId: "trainhw-85ef6",
-    storageBucket: "",
-    messagingSenderId: "458776980355"
-  };
-  firebase.initializeApp(config); 
-</script>
+	// 1. Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBYI-IY3X37-f6E97aCDSCg5CXM0kzCjbo",
+      authDomain: "fir-trainscheduler-cf14c.firebaseapp.com",
+      databaseURL: "https://fir-trainscheduler-cf14c.firebaseio.com",
+      projectId: "fir-trainscheduler-cf14c",
+      storageBucket: "fir-trainscheduler-cf14c.appspot.com",
+      messagingSenderId: "921347413833"
+    };
+    firebase.initializeApp(config);
 
-// First Time (pushed back 1 year to make sure it comes before current time)
-   
+
+      var database = firebase.database();
+
+// start here //
+
+var database = firebase.database();
+
+  // First Time (pushed back 1 year to make sure it comes before current time)
+
   // 2. Button for adding Trains
   $("#add-train-btn").on("click", function(event) {
   		event.preventDefault();
+      //why is the above here?//
 
 	 // Grabs user input
 	  var trainName = $("#train-name-input").val().trim();
@@ -39,7 +44,7 @@ $(document).ready(function();
 
 
 	   // Alert
-  		alert("Train successfully added");
+  		alert("You have rain successfully added");
 
 	 // Clears all of the text-boxes
 	  $("#train-name-input").val("");
@@ -91,7 +96,7 @@ $(document).ready(function();
 
 
 	  // Add each train's data into the table
-	  $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq + 
+	  $("#train-table > tbody").append("<tr><td>" + trainName + "</td><td>" + trainDest + "</td><td>" + trainFreq +
 	   "</td><td>" + moment(nextTrain).format("HH:mm") + "</td><td>" + tMinutesTillTrain + "</td></tr>");
 	});
 
